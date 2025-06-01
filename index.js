@@ -13,7 +13,7 @@ app.post('/api/compress', async (req, res) => {
     const input = req.body
     console.log(req.body)
 
-    if (!input) return res.status(400).json({ error: 'Falta el campo "text"' })
+    if (!input) return res.status(400).json({ error: 'Falta el campo' })
 
     try {
         const compressed = await compressString(input)
@@ -26,7 +26,7 @@ app.post('/api/compress', async (req, res) => {
 app.post('/api/decompress', async (req, res) => {
     const input = req.body
 
-    if (!input) return res.status(400).json({ error: 'Falta el campo "text"' })
+    if (!input) return res.status(400).json({ error: 'Falta el campo' })
 
     try {
         const compressed = await decompressString(input)
